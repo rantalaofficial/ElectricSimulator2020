@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		
+		<title>Sähkösimulaattori 2020</title>
+		<link href="style.css" type="text/css" rel="stylesheet" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="libraries/download.js"></script>
+		</style>
+		
+	</head>
+
+<body oncontextmenu="return false;">
+	
+	<header class="panel">
+		<h1>Sähkösimulaattori 2020 | Matias Rantala</h1>
+	</header>
+
+	<div class="panel columnContainer" id="controlsDiv">
+		<div class="column">
+			<b>Simulaatio:</b>
+			<input id="simStartStop" type="button" value="Aloita" onclick="startStopSimulation()"><br>
+
+			Aika: <b id="simTimeText"></b>
+		</div>
+		<div class="column" id="toolSelectionDiv">
+			<b>Työkalu:</b><br>
+			<input checked="checked" id="selectToolRadioBtn" type="radio" name="toolSelectorRadio" onclick="toolRadioBtnOnClick(0)">
+			<label for="selectToolRadioBtn">Valinta työkalu</label> 
+			<input id="deleteToolRadioBtn" type="radio" name="toolSelectorRadio" onclick="toolRadioBtnOnClick(1)">
+			<label for="deleteToolRadioBtn">Poisto työkalu</label> 
+		</div>
+	</div>
+
+	<canvas id="mainWindow" width="800" height="500"></canvas>
+
+	<div class="panel columnContainer" id="infoDiv">
+		<div class="column" id="circuitInfoDiv">
+			<b>Virtapiiri</b><br>
+			Kokonaisresistanssi: <b id="circuitResistanceText">- Ω</b><br>
+			Kokonaisvirta: <b id="circuitCurrentText">- A</b><br>
+
+			<input input type="button" id="saveCircuitBtn" value="Tallenna tiedostoon" onclick="saveCircuit()"><br>
+
+			<label for="loadCircuitBtn">Lataa tiedostosta:</label>
+			<input type="file" id="circuitInput" accept="text/plain" onchange="loadCircuit()"><br>
+			<pre id="circuitFileContent"></pre>
+		</div>
+
+		<div class="column" id="componentInfoDiv">
+			<b id="componentTypeText">Type</b> <span id="componentWarningText"></span><br>
+
+			Jännite: <b id="componentVoltageText">- V</b> 
+			<input id="componentVoltageEditBtn" type="button" value="Muuta" onclick="componentEditAction(1)"><br>
+
+			Resistanssi: <b id="componentResistanceText">- Ω</b> 
+			<input id="resistanceEditBtn" type="button" value="Muuta" onclick="componentEditAction(2)"><br>
+
+			Virta: <b id="componentCurrentText">- A</b> 
+			<input type="button" value="Muuta maksimia" onclick="componentEditAction(3)"><br>
+
+			Kulutus: <b id="componentConsumptionText">- As</b><br>
+		</div>
+	</div>
+
+	<div class="panel" id="componentDiv">
+		<div id="addElementParallelBtnDiv">
+			<input type="button" value="Lisää lamppu rinnalle" onclick="componentDivAction(1)"><br>
+			<input type="button" value="Lisää vastus rinnalle" onclick="componentDivAction(2)"><br>
+			<input type="button" value="Lisää kytkin rinnalle" onclick="componentDivAction(3)"><br>
+		</div>
+		<input type="button" value="Poista" onclick="componentDivAction(4)"><br>
+	</div>
+
+	<div class="panel" id="circuitDiv"> 
+		<div id="addCircuitElementBtnDiv">
+			<!--<input type="button" value="Lisää virtalähde" onclick="circuitDivAction(1)"><br>-->
+			<input type="button" value="Lisää lamppu" onclick="circuitDivAction(2)"><br>
+			<input type="button" value="Lisää vastus" onclick="circuitDivAction(3)"><br>
+			<input type="button" value="Lisää kytkin" onclick="circuitDivAction(4)"><br>
+		</div>
+		<input type="button" value="Uusi virtapiiri" onclick="componentDivAction(5)"><br>
+	</div>
+
+	<script src="circuit.js"></script>
+	<script src="app.js"></script>
+	<script src="controls.js"></script>
+	
+</body>
+
+</html>

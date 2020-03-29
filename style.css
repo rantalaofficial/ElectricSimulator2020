@@ -1,0 +1,104 @@
+* {
+    font-family: 'Arial';
+}
+
+h1 {
+    color: black;
+    margin: 0px;
+    padding: 10px;
+}
+
+p {
+    margin: 4px;
+}
+
+header {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 1000px;
+}
+
+body {
+    text-align: center;
+    background-color: lightblue;
+}
+
+.panel {
+    background-color: white;
+    border: 2px solid black;
+}
+
+#mainWindow {
+    margin: 10px;
+}
+
+#controlsDiv {
+    width: 800px;
+    margin: auto;
+    text-align: left;
+}
+
+#infoDiv {
+    width: 800px;
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.columnContainer {
+    content: "";
+    display: table;
+    clear: both;
+    padding: 0px;
+    margin: auto;
+}
+
+.column {
+    float: left;
+    width: 48%;
+    text-align: left;
+    padding: 1%;
+}
+
+#componentInfoDiv {
+    display: none;
+}
+
+
+#mainWindow {
+    z-index: 0;
+}
+
+#componentDiv, #circuitDiv {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    left: 10px;
+    padding: 4px;
+    margin: 0px;
+    display: none;
+}
+
+#componentWarningText {
+    color: red;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    border: 2px solid gray;
+    background-color: white;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    padding: 4px;
+    margin: 2px;
+}
+input[type="radio"]:checked + label {
+    background-color: lightgray;
+}
+label {
+    font-size: small;
+}
