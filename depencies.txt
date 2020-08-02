@@ -1,2 +1,0 @@
-npm install --save @types/jquery
-npm install -g typescript

@@ -4,7 +4,7 @@
 	<head>
 		
 		<title>Sähkösimulaattori 2020</title>
-		<link href="style.css" type="text/css" rel="stylesheet" />
+		<link href="styles/style.css" type="text/css" rel="stylesheet" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<script src="libraries/download.js"></script>
@@ -84,9 +84,17 @@
 		<input type="button" value="Uusi virtapiiri" onclick="componentDivAction(5)"><br>
 	</div>
 
-	<script src="circuit.js"></script>
-	<script src="app.js"></script>
-	<script src="controls.js"></script>
+	<script src="scripts/build/common.js"></script>
+	<script src="scripts/build/circuit.js"></script>
+	<script src="scripts/build/component.js"></script>
+	<script src="scripts/build/controls.js"></script>
+	<script src="scripts/build/menus.js"></script>
+	<script src="scripts/build/canvas.js"></script>
+	<script src="scripts/build/camera.js"></script>
+	<script src="scripts/build/simulation.js"></script>
+	<script src="scripts/build/saving.js"></script>
+
+	<script src="scripts/build/app.js"></script>
 	
 </body>
 
